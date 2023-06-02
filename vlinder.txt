@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int money;
+    int price;
+    int wrapers;
+    printf("buy of money");
+    printf("unit price amoutn");
+    printf("no.of wrapers");
+    scanf("%d %d %d",&money,&price,&wrapers);
+    int count=0;
+    int rem=0;
+    if(money%price==0){
+        count=money/price;
+    }else{
+        count=money/price;
+        rem=money%price;
+    }
+    int t=count;
+    //printf("%d count of amount :",t);
+    while(t>0){
+        if(t==wrapers){
+            count++;
+            t=t-wrapers;
+            //printf("%d first",t);
+        }else if(t>wrapers){          //wrpers count one choclates free for that that logics write
+             count++;
+             t=t-wrapers;
+             printf("%d second",t);
+        }else{
+             int y=rem+t;
+             if(y>=wrapers){
+                count++;
+             }else{
+                 break;
+             }
+        }
+
+
+    }
+    printf("%d total choclates",count);
+
+}
